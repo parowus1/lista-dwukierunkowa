@@ -119,3 +119,32 @@ void remove_at_index(int index) {
             size--;
         }
     }
+
+ void display() {
+        Node* current = head;
+        while (current != nullptr) {
+            std::cout << current->data << " ";
+            current = current->next;
+        }
+        std::cout << std::endl;
+    }
+
+    void display_reverse() {
+        Node* current = tail;
+        while (current != nullptr) {
+            std::cout << current->data << " ";
+            current = current->prev;
+        }
+        std::cout << std::endl;
+    }
+
+    void clear() {
+        while (size > 0) {
+            remove_from_end();
+        }
+    }
+
+    ~DoublyLinkedList() {
+        clear();
+    }
+};
