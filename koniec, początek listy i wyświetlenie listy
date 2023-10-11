@@ -1,1 +1,1 @@
-$ git reset --hard 36d89dcb3593a616f4cc0061bae81d225329f7eb
+git reset --hard HEAD^
