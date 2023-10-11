@@ -148,3 +148,34 @@ void remove_at_index(int index) {
         clear();
     }
 };
+
+int main() {
+    DoublyLinkedList myList;
+
+    myList.add_to_end(1);
+    myList.add_to_end(2);
+    myList.add_to_end(3);
+    myList.display(); // Output: 1 2 3
+
+    myList.add_to_beginning(0);
+    myList.display(); // Output: 0 1 2 3
+
+    myList.add_at_index(4, 4);
+    myList.display(); // Output: 0 1 2 3 4
+
+    myList.remove_from_beginning();
+    myList.display(); // Output: 1 2 3 4
+
+    myList.remove_from_end();
+    myList.display(); // Output: 1 2 3
+
+    myList.remove_at_index(1);
+    myList.display(); // Output: 1 3
+
+    myList.display_reverse(); // Output: 3 1
+
+    myList.clear();
+    myList.display(); // Output: (empty)
+
+    return 0;
+}
