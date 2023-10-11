@@ -29,3 +29,37 @@ public:
         }
         size++;
     }
+void add_to_end(int data) {
+        Node* new_node = new Node(data);
+        if (size == 0) {
+            head = tail = new_node;
+        } else {
+            new_node->prev = tail;
+            tail->next = new_node;
+            tail = new_node;
+        }
+        size++;
+    }
+
+    void add_at_index(int data, int index) {
+        if (index < 0 || index > size) {
+            std::cout << "Invalid index" << std::endl;
+            return;
+        }
+        if (index == 0) {
+            add_to_beginning(data);
+        } else if (index == size) {
+            add_to_end(data);
+        } else {
+            Node* new_node = new Node(data);
+            Node* current = head;
+            for (int i = 0; i < index; i++) {
+                current = current->next;
+            }
+            new_node->prev = current->prev;
+            new_node->next = current;
+            current->prev->next = new_node;
+            current->prev = new_node;
+            size++;
+        }
+    }
