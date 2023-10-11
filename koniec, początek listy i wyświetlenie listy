@@ -63,3 +63,35 @@ void add_to_end(int data) {
             size++;
         }
     }
+
+void remove_from_beginning() {
+        if (size == 0) {
+            std::cout << "List is empty" << std::endl;
+        } else {
+            Node* temp = head;
+            if (size == 1) {
+                head = tail = nullptr;
+            } else {
+                head = head->next;
+                head->prev = nullptr;
+            }
+            delete temp;
+            size--;
+        }
+    }
+
+    void remove_from_end() {
+        if (size == 0) {
+            std::cout << "List is empty" << std::endl;
+        } else {
+            Node* temp = tail;
+            if (size == 1) {
+                head = tail = nullptr;
+            } else {
+                tail = tail->prev;
+                tail->next = nullptr;
+            }
+            delete temp;
+            size--;
+        }
+    }
